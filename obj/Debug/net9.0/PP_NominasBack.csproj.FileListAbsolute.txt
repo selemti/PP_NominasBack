@@ -1,0 +1,7 @@
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.csproj.AssemblyReference.cache
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.AssemblyInfoInputs.cache
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.AssemblyInfo.cs
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.csproj.CoreCompileInputs.cache
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.MvcApplicationPartsAssemblyInfo.cs
+C:\NextCloud\BPM\BPM Nominas\BPM Asistencia y Puntualidad\30-04-2025\Casa_30_04_2025\Controller\PP_NominasBack_ControllerFix_Corrected2\obj\Debug\net9.0\PP_NominasBack.MvcApplicationPartsAssemblyInfo.cache
