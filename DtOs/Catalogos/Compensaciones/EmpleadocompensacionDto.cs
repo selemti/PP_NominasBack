@@ -1,45 +1,55 @@
+
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Compensaciones
+namespace PP_NominasBack.Dtos.Catalogos.Compensaciones
 {
-    public class EmpleadocompensacionDto
+    public class EmpleadoCompensacionDto
     {
-        /// Empleado relacionado
-        public string? EmpleadoId { get; set; }
-
-        /// Compensación aplicada (Bono, Comisión, Premio)
-        public string? CompensacionId { get; set; }
-
-        /// Monto asignado o fórmula base
-        public string Valor { get; set; }
-
-        /// (0 = Fijo, 1 = Variable, 2 = Por Meta)
+        [Display(Name = "Id")]
         [Required]
-        public TipoAsignacionEnum TipoAsignacion { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Fórmula o condición especial aplicable (opcional)
-        public string Formula { get; set; }
-
-        /// (0 = Única, 1 = Mensual, 2 = Quincenal)
+        [Display(Name = "EmpleadoId")]
         [Required]
-        public PeriodicidadEnum Periodicidad { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        /// Fecha de inicio de vigencia
+        [Display(Name = "CompensacionId")]
         [Required]
-        public DateTime FechaInicio { get; set; }
+        public List<string> CompensacionId { get; set; }
 
-        /// Fecha de fin de vigencia (nullable)
+        [Display(Name = "Valor")]
         [Required]
-        public DateTime FechaFin { get; set; }
+        public List<decimal?> Valor { get; set; }
 
-        /// ¿Asignación activa?
+        [Display(Name = "Tipo de asignación")]
         [Required]
-        public bool Vigente { get; set; }
+        public List<int?> TipoAsignacion { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Fórmula de cálculo")]
+        [Required]
+        public List<string> Formula { get; set; }
 
+        [Display(Name = "Periodicidad")]
+        [Required]
+        public List<int?> Periodicidad { get; set; }
+
+        [Display(Name = "Fecha inicio")]
+        [Required]
+        public List<DateTime?> FechaInicio { get; set; }
+
+        [Display(Name = "Fecha fin")]
+        [Required]
+        public List<DateTime?> FechaFin { get; set; }
+
+        [Display(Name = "Vigente")]
+        [Required]
+        public List<bool?> Vigente { get; set; }
+
+        [Display(Name = "Auditable")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
     }
 }

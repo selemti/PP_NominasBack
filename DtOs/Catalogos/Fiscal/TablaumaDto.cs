@@ -1,29 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Fiscal
 {
     public class TablaUmaDto
     {
+        [Display(Name = "ID de la UMA")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
-        [Display(Name = "ValorUma")]
-        public decimal? ValorUma { get; set; }
-
-        [Display(Name = "FechaInicioVigencia")]
-        public DateTime? FechaInicioVigencia { get; set; }
-
-        [Display(Name = "FechaFinVigencia")]
-        public DateTime? FechaFinVigencia { get; set; }
-
-        [Display(Name = "EjercicioFiscal")]
-        public int? EjercicioFiscal { get; set; }
-
+        [Display(Name = "Valor monetario de la UMA")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<decimal?> ValorUma { get; set; }
+
+        [Display(Name = "Fecha de inicio de vigencia")]
+        [Required]
+        public List<DateTime?> FechaInicioVigencia { get; set; }
+
+        [Display(Name = "Fecha fin de vigencia")]
+        [Required]
+        public List<DateTime?> FechaFinVigencia { get; set; }
+
+        [Display(Name = "Año fiscal aplicable")]
+        [Required]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

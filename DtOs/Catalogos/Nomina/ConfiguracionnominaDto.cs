@@ -1,26 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class ConfiguracionnominaDto
+    public class ConfiguracionNominaDto
     {
-        /// Grupo empresarial relacionado
-        public string? GrupoEmpresaId { get; set; }
-
-        /// (0 = Quincenal, 1 = Semanal, 2 = Mensual)
+        [Display(Name = "ID de configuración")]
         [Required]
-        public TipoNominaEnum TipoNomina { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Días específicos de pago (ej: 5, 20)
-        public string DiasPago { get; set; }
+        [Display(Name = "Grupo empresarial relacionado")]
+        [Required]
+        public List<string> GrupoEmpresaId { get; set; }
 
-        /// Centro de trabajo relacionado
-        public string? CentroTrabajoId { get; set; }
+        [Display(Name = "(0 = Quincenal, 1 = Semanal, 2 = Mensual)")]
+        [Required]
+        public List<int?> TipoNomina { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Días específicos de pago (ej: 5, 20)")]
+        [Required]
+        public List<List<int>?> DiasPago { get; set; }
+
+        [Display(Name = "Centro de trabajo relacionado")]
+        [Required]
+        public List<string> CentroTrabajoId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

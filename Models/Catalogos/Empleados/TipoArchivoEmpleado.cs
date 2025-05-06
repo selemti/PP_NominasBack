@@ -1,23 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Empleados
 {
     public class TipoArchivoEmpleado
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string Codigo { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string Nombre { get; set; }
+        [BsonElement("codigo")]
+        public List<string> Codigo { get; set; }
 
-        public bool? Requerido { get; set; }
+        [BsonElement("nombre")]
+        public List<string> Nombre { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("requerido")]
+        public List<bool?> Requerido { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

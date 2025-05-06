@@ -1,35 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Configuracion
 {
     public class PoliticaDto
     {
+        [Display(Name = "ID de la política")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Nombre de la política")]
         [Required]
-        [Display(Name = "NombrePolitica")]
-        public string NombrePolitica { get; set; }
+        public List<string> NombrePolitica { get; set; }
 
-        [Required]
         [Display(Name = "DescripcionPolitica")]
-        public string DescripcionPolitica { get; set; }
-
         [Required]
-        [Display(Name = "VersionPolitica")]
-        public string VersionPolitica { get; set; }
+        public List<string> DescripcionPolitica { get; set; }
 
-        [Display(Name = "FechaInicioVigencia")]
-        public DateTime? FechaInicioVigencia { get; set; }
-
-        [Display(Name = "FechaFinVigencia")]
-        public DateTime? FechaFinVigencia { get; set; }
-
+        [Display(Name = "Número de versión")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<string> VersionPolitica { get; set; }
+
+        [Display(Name = "Fecha de inicio de vigencia")]
+        [Required]
+        public List<DateTime?> FechaInicioVigencia { get; set; }
+
+        [Display(Name = "Fecha de fin de vigencia (opcional)")]
+        [Required]
+        public List<string> FechaFinVigencia { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,26 +1,33 @@
-using PP_NominasBack.Profiles;
-using PP_NominasBack.Configurations;
+using AutoMapper;
+using PP_NominasBack.Profiles;      // <- Asegúrate de que exista esta carpeta/namespace
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Mongo + AutoMapper
-builder.Services.Configure<MongoSettings>(
-    builder.Configuration.GetSection("MongoConnection"));
-builder.Services.AddSingleton<MongoContext>();
+// 1. Controllers + JSON
+builder.Services.AddControllers()
+    .AddJsonOptions(opts =>
+    {
+        opts.JsonSerializerOptions.PropertyNamingPolicy = null;
+    });
+
+// 2. AutoMapper
 builder.Services.AddAutoMapper(typeof(CatalogosProfile));
 
-// MVC y Swagger
-builder.Services.AddControllers();
+// 3. Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "PP_NominasBack API", Version = "v1" });
+});
 
 var app = builder.Build();
 
-// Middleware
+// Pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "PP_NominasBack v1"));
 }
 
 app.UseHttpsRedirection();

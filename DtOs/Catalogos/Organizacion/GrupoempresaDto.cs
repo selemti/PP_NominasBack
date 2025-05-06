@@ -1,29 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Organizacion
 {
     public class GrupoEmpresaDto
     {
+        [Display(Name = "ID del grupo empresarial")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código interno del grupo")]
         [Required]
-        [Display(Name = "Clave")]
-        public string Clave { get; set; }
+        public List<string> Clave { get; set; }
 
+        [Display(Name = "Nombre del grupo")]
         [Required]
-        [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public List<string> Nombre { get; set; }
 
+        [Display(Name = "RFC del grupo")]
         [Required]
-        [Display(Name = "Rfc")]
-        public string Rfc { get; set; }
+        public List<string> Rfc { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

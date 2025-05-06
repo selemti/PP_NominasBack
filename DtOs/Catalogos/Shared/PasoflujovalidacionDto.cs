@@ -1,34 +1,16 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using MongoDB.Bson;
 
-namespace PP_NominasBack.DTOs.Catalogos.Shared
+namespace PP_Nominas.Models.Shared
 {
-    public class PasoflujovalidacionDto
+    public class PasoFlujoValidacionDto
     {
-        /// Flujo al que pertenece el paso
-        public string? FlujoValidacionId { get; set; }
-
-        /// Orden secuencial del paso
-        public string OrdenPaso { get; set; }
-
-        /// Tipo de responsable (0 = Usuario individual, 1 = Rol, 2 = Área/Departamento)
-        [Required]
-        public TipoResponsableEnum TipoResponsable { get; set; }
-
-        /// ID del responsable asignado
-        public string? ResponsableId { get; set; }
-
-        /// ¿Este paso requiere aceptación explícita?
-        [Required]
+        public ObjectId Id { get; set; }
+        public Auditable Auditable { get; set; }
         public bool AutorizacionNecesaria { get; set; }
-
-        /// ¿Se debe enviar notificación en este paso?
-        [Required]
+        public ObjectId FlujoValidacionId { get; set; }
         public bool NotificarEnEstePaso { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
-
+        public int OrdenPaso { get; set; }
+        public ObjectId ResponsableId { get; set; }
+        public int TipoResponsable { get; set; }
     }
 }

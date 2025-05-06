@@ -1,24 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Asistencia
 {
     public class PlantillaMensual
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public int? Mes { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public int? Ano { get; set; }
+        [BsonElement("mes")]
+        public List<int?> Mes { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string HorarioPlantillaId { get; set; }
+        [BsonElement("aO")]
+        public List<int?> AO { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("horarioPlantillaId")]
+        public List<string> HorarioPlantillaId { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

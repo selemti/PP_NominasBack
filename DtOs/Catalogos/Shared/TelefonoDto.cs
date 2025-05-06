@@ -1,40 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Shared
 {
     public class TelefonoDto
     {
+        [Display(Name = "ID del teléfono")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código del tipo de entidad asociada")]
         [Required]
-        [Display(Name = "TipoEntidad")]
-        public string TipoEntidad { get; set; }
+        public List<string> TipoEntidad { get; set; }
 
+        [Display(Name = "ID de la entidad asociada")]
         [Required]
-        [Display(Name = "EntidadId")]
-        public string EntidadId { get; set; }
+        public List<string> EntidadId { get; set; }
 
+        [Display(Name = "Código de país telefónico")]
         [Required]
-        [Display(Name = "ClavePais")]
-        public string ClavePais { get; set; }
+        public List<string> ClavePais { get; set; }
 
+        [Display(Name = "Número de teléfono principal")]
         [Required]
-        [Display(Name = "NumeroTelefonico")]
-        public string NumeroTelefonico { get; set; }
+        public List<string> NumeroTelefonico { get; set; }
 
+        [Display(Name = "Número de extensión")]
         [Required]
-        [Display(Name = "Extension")]
-        public string Extension { get; set; }
+        public List<string> Extension { get; set; }
 
-        [Display(Name = "TipoTelefono")]
-        public int? TipoTelefono { get; set; }
-
+        [Display(Name = "Tipo de teléfono")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> TipoTelefono { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

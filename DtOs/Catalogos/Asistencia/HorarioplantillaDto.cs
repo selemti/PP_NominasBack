@@ -1,29 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class HorarioPlantillaDto
     {
+        [Display(Name = "ID de la plantilla de horarios")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Nombre de la plantilla")]
         [Required]
-        [Display(Name = "NombrePlantilla")]
-        public string NombrePlantilla { get; set; }
+        public List<string> NombrePlantilla { get; set; }
 
+        [Display(Name = "Descripción breve del horario")]
         [Required]
-        [Display(Name = "DescripcionPlantilla")]
-        public string DescripcionPlantilla { get; set; }
+        public List<string> DescripcionPlantilla { get; set; }
 
+        [Display(Name = "Turno base de la plantilla")]
         [Required]
-        [Display(Name = "TurnoId")]
-        public string TurnoId { get; set; }
+        public List<string> TurnoId { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

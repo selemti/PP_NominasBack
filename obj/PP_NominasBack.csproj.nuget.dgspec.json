@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\30-04-2025\\Casa_30_04_2025\\Controller\\PP_NominasBack_ControllerFix_Corrected2\\PP_NominasBack.csproj": {}
+    "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\05-05-2025\\PP_NominasBack\\PP_NominasBack.csproj": {}
   },
   "projects": {
-    "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\30-04-2025\\Casa_30_04_2025\\Controller\\PP_NominasBack_ControllerFix_Corrected2\\PP_NominasBack.csproj": {
+    "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\05-05-2025\\PP_NominasBack\\PP_NominasBack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\30-04-2025\\Casa_30_04_2025\\Controller\\PP_NominasBack_ControllerFix_Corrected2\\PP_NominasBack.csproj",
+        "projectUniqueName": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\05-05-2025\\PP_NominasBack\\PP_NominasBack.csproj",
         "projectName": "PP_NominasBack",
-        "projectPath": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\30-04-2025\\Casa_30_04_2025\\Controller\\PP_NominasBack_ControllerFix_Corrected2\\PP_NominasBack.csproj",
+        "projectPath": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\05-05-2025\\PP_NominasBack\\PP_NominasBack.csproj",
         "packagesPath": "C:\\Users\\Tavo\\.nuget\\packages\\",
-        "outputPath": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\30-04-2025\\Casa_30_04_2025\\Controller\\PP_NominasBack_ControllerFix_Corrected2\\obj\\",
+        "outputPath": "C:\\NextCloud\\BPM\\BPM Nominas\\BPM Asistencia y Puntualidad\\05-05-2025\\PP_NominasBack\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -56,10 +56,6 @@
               "version": "[12.0.1, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
-              "target": "Package",
-              "version": "[9.0.4, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.4, )"
             },

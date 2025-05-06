@@ -1,32 +1,37 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Asistencia
 {
     public class ChecadaRemota
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
+        public ObjectId Id { get; set; }
+
+        [BsonElement("id")]
         public string Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("empleadoId")]
         public string EmpleadoId { get; set; }
 
-        public DateTime? FechaHora { get; set; }
+        [BsonElement("fechaHora")]
+        public DateTime FechaHora { get; set; }
 
-        public int? TipoEvento { get; set; }
+        [BsonElement("tipoEvento")]
+        public int TipoEvento { get; set; }
 
-        public decimal? Latitud { get; set; }
+        [BsonElement("latitud")]
+        public decimal Latitud { get; set; }
 
-        public decimal? Longitud { get; set; }
+        [BsonElement("longitud")]
+        public decimal Longitud { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
+        [BsonElement("ubicacionId")]
         public string UbicacionId { get; set; }
 
+        [BsonElement("fotoAdjunta")]
         public string FotoAdjunta { get; set; }
 
+        [BsonElement("auditable")]
         public string Auditable { get; set; }
 
     }

@@ -1,29 +1,30 @@
-using System;
+﻿// Dtos/Catalogos/Shared/CatalogoEnumsDto.cs
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Shared
+namespace PP_NominasBack.Dtos.Catalogos.Shared
 {
-    public class CatalogoenumsDto
+    /// <summary>
+    /// DTO genérico para exponer colecciones de enums.
+    /// </summary>
+    public class CatalogoEnumsDto
     {
-        /// Código del enum (grupo)
-        public string EnumCode { get; set; }
+        [Display(Name = "Identificador único del elemento")]
+        public int Key { get; set; }
 
-        /// Clave interna del valor
-        public string EnumKey { get; set; }
+        [Display(Name = "Valor textual del enum")]
+        public string Value { get; set; } = null!;
+    }
 
-        /// Valor textual del enum
-        public string Valor { get; set; }
+    /// <summary>
+    /// Contenedor para múltiples catálogos de enums.
+    /// </summary>
+    public class CatalogoEnumsCollectionDto
+    {
+        [Display(Name = "Nombre del catálogo (tipo de enum)")]
+        public string CatalogName { get; set; } = null!;
 
-        /// Descripción extendida del valor
-        public string Descripcion { get; set; }
-
-        /// Si el enum está activo o deprecated
-        [Required]
-        public bool Activo { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
-
+        [Display(Name = "Items del catálogo")]
+        public List<CatalogoEnumsDto> Items { get; set; } = new();
     }
 }

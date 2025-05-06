@@ -1,37 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Shared
 {
     public class Persona
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string Curp { get; set; }
+        [BsonElement("curp")]
+        public List<string> Curp { get; set; }
 
-        public string Rfc { get; set; }
+        [BsonElement("rfc")]
+        public List<string> Rfc { get; set; }
 
-        public string Nombre { get; set; }
+        [BsonElement("email")]
+        public List<string> Email { get; set; }
 
-        public string ApellidoPaterno { get; set; }
+        [BsonElement("nacionalidad")]
+        public List<string> Nacionalidad { get; set; }
 
-        public string ApellidoMaterno { get; set; }
+        [BsonElement("direccion")]
+        public List<Direccion>? Direccion { get; set; }
 
-        public DateTime? FechaNacimiento { get; set; }
-
-        public int? Sexo { get; set; }
-
-        public int? EstadoCivil { get; set; }
-
-        public int? NivelEstudio { get; set; }
-
-        public int? TipoSangre { get; set; }
-
-        public string Auditable { get; set; }
+        [BsonElement("telefonos")]
+        public List<List<Telefono>?> Telefonos { get; set; }
 
     }
 }

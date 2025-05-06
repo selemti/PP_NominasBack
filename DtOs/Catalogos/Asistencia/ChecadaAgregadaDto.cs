@@ -5,31 +5,32 @@ namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class ChecadaAgregadaDto
     {
-        [Required]
         [Display(Name = "Id")]
+        [Required]
         public string Id { get; set; }
 
-        [Required]
         [Display(Name = "EmpleadoId")]
+        [Required]
         public string EmpleadoId { get; set; }
 
         [Display(Name = "Fecha")]
-        public DateTime? Fecha { get; set; }
-
         [Required]
+        public DateTime Fecha { get; set; }
+
         [Display(Name = "HoraEntrada")]
+        [Required]
         public string HoraEntrada { get; set; }
 
-        [Required]
         [Display(Name = "HoraSalida")]
+        [Required]
         public string HoraSalida { get; set; }
 
-        [Required]
         [Display(Name = "Observaciones")]
+        [Required]
         public string Observaciones { get; set; }
 
-        [Required]
         [Display(Name = "Auditable")]
+        [Required]
         public string Auditable { get; set; }
 
     }

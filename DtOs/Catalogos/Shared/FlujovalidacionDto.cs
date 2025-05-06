@@ -1,26 +1,14 @@
-using System;
-using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using MongoDB.Bson;
 
-namespace PP_NominasBack.DTOs.Catalogos.Shared
+namespace PP_Nominas.Models.Shared
 {
-    public class FlujovalidacionDto
+    public class FlujoValidacionDto
     {
-        /// Nombre descriptivo del flujo
-        public string NombreFlujo { get; set; }
-
-        /// Nombre del proceso al que aplica
-        public string ProcesoRelacionado { get; set; }
-
-        /// Descripción breve del flujo
-        public string DescripcionFlujo { get; set; }
-
-        /// Si el flujo está activo o no
-        [Required]
+        public ObjectId Id { get; set; }
         public bool Activo { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
-
+        public Auditable Auditable { get; set; }
+        public string DescripcionFlujo { get; set; }
+        public string NombreFlujo { get; set; }
+        public string ProcesoRelacionado { get; set; }
     }
 }

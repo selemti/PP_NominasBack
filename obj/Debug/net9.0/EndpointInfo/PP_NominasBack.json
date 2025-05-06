@@ -1,0 +1,811 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "PP_NominasBack API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Empleado": {
+      "get": {
+        "tags": [
+          "Empleado"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/EmpleadoDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Empleado"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Empleado/{id}": {
+      "get": {
+        "tags": [
+          "Empleado"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpleadoDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpleadoDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EmpleadoDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Empleado"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmpleadoDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Empleado"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ArchivoEmpleadoDto": {
+        "required": [
+          "Auditable",
+          "EmpleadoId",
+          "FechaCarga",
+          "Id",
+          "TipoArchivo",
+          "UrlArchivo",
+          "Vigente"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "TipoArchivo": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "UrlArchivo": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "FechaCarga": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "Vigente": {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "AsignacionPlazaEmpleadoDto": {
+        "required": [
+          "Auditable",
+          "EmpleadoId",
+          "FechaFin",
+          "FechaInicio",
+          "Id",
+          "PlazaId",
+          "Salario",
+          "TipoSalario",
+          "Vigente"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "PlazaId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Salario": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          "TipoSalario": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "FechaInicio": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "FechaFin": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "Vigente": {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Auditable": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "$ref": "#/components/schemas/ObjectId"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DatosPagoEmpleadoDto": {
+        "required": [
+          "Auditable",
+          "BancoId",
+          "CuentaBancaria",
+          "EmpleadoId",
+          "FechaFin",
+          "FechaInicio",
+          "FormaPago",
+          "Id",
+          "Vigente"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "BancoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "CuentaBancaria": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "FormaPago": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "Vigente": {
+            "type": "array",
+            "items": {
+              "type": "boolean"
+            }
+          },
+          "FechaInicio": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "FechaFin": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Direccion": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "Calle": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "NumeroExterior": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmpleadoContactoDto": {
+        "required": [
+          "Auditable",
+          "EmpleadoId",
+          "Id",
+          "NombreContacto",
+          "Parentesco"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "NombreContacto": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Parentesco": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmpleadoDto": {
+        "required": [
+          "AsignacionesPlaza",
+          "ContactosEmergencia",
+          "Curp",
+          "DatosPagoEmpleado",
+          "Documentos",
+          "FechaIngreso",
+          "HistorialPlazas",
+          "Id",
+          "Persona",
+          "RegistroImss",
+          "Rfc",
+          "TipoContrato",
+          "Vigente"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Persona": {
+            "$ref": "#/components/schemas/PersonaDto"
+          },
+          "Curp": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "Rfc": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "FechaIngreso": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "FechaBaja": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "TipoContrato": {
+            "$ref": "#/components/schemas/TipoContrato"
+          },
+          "Vigente": {
+            "type": "boolean"
+          },
+          "RegistroImss": {
+            "$ref": "#/components/schemas/RegistroImssDto"
+          },
+          "DatosPagoEmpleado": {
+            "$ref": "#/components/schemas/DatosPagoEmpleadoDto"
+          },
+          "AsignacionesPlaza": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AsignacionPlazaEmpleadoDto"
+            }
+          },
+          "HistorialPlazas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/HistorialPlazaEmpleadoDto"
+            }
+          },
+          "ContactosEmergencia": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmpleadoContactoDto"
+            }
+          },
+          "Documentos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArchivoEmpleadoDto"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "HistorialPlazaEmpleadoDto": {
+        "required": [
+          "Auditable",
+          "EmpleadoId",
+          "FechaCambio",
+          "Id",
+          "MotivoCambio",
+          "PlazaIdAnterior",
+          "PlazaIdNueva"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "PlazaIdAnterior": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "PlazaIdNueva": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "FechaCambio": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "MotivoCambio": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "ObjectId": {
+        "type": "object",
+        "properties": {
+          "Timestamp": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "CreationTime": {
+            "type": "string",
+            "format": "date-time",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PersonaDto": {
+        "required": [
+          "Curp",
+          "Direccion",
+          "Email",
+          "Nacionalidad",
+          "Rfc",
+          "Telefonos"
+        ],
+        "type": "object",
+        "properties": {
+          "Curp": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Rfc": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Email": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Nacionalidad": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Direccion": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Direccion"
+            }
+          },
+          "Telefonos": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/Telefono"
+              }
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegistroImssDto": {
+        "required": [
+          "Auditable",
+          "EmpleadoId",
+          "FechaAlta",
+          "FechaBaja",
+          "Id",
+          "Nss"
+        ],
+        "type": "object",
+        "properties": {
+          "Id": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "EmpleadoId": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "FechaAlta": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "FechaBaja": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "Nss": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      "Telefono": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "TipoEntidad": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "EntidadId": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ObjectId"
+            },
+            "nullable": true
+          },
+          "ClavePais": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "NumeroTelefonico": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "Extension": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "TipoTelefono": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoContrato": {
+        "type": "object",
+        "properties": {
+          "Id": {
+            "$ref": "#/components/schemas/ObjectId"
+          },
+          "NombreContrato": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "DescripcionContrato": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "Auditable": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Auditable"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

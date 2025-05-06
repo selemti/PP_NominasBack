@@ -1,33 +1,38 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Empleados
 {
     public class DatosPagoEmpleado
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EmpleadoId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string BancoId { get; set; }
+        [BsonElement("empleadoId")]
+        public List<string> EmpleadoId { get; set; }
 
-        public string CuentaBancaria { get; set; }
+        [BsonElement("bancoId")]
+        public List<string> BancoId { get; set; }
 
-        public int? FormaPago { get; set; }
+        [BsonElement("cuentaBancaria")]
+        public List<string> CuentaBancaria { get; set; }
 
-        public bool? Vigente { get; set; }
+        [BsonElement("formaPago")]
+        public List<int?> FormaPago { get; set; }
 
-        public DateTime? FechaInicio { get; set; }
+        [BsonElement("vigente")]
+        public List<bool?> Vigente { get; set; }
 
-        public DateTime? FechaFin { get; set; }
+        [BsonElement("fechaInicio")]
+        public List<DateTime?> FechaInicio { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("fechaFin")]
+        public List<DateTime?> FechaFin { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

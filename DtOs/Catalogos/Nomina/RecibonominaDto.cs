@@ -1,51 +1,43 @@
+
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class RecibonominaDto
+    public class ReciboNominaDto
     {
-        /// Empleado asociado al recibo
-        public string? EmpleadoId { get; set; }
-
-        /// Periodo de nómina del recibo
-        public string? PeriodoNominaId { get; set; }
-
-        /// Total de percepciones brutas
-        public string TotalPercepciones { get; set; }
-
-        /// Total de deducciones
-        public string TotalDeducciones { get; set; }
-
-        /// Neto a pagar
-        public string TotalNeto { get; set; }
-
-        /// Forma de pago (0 = Transferencia, 1 = Cheque)
+        [Display(Name = "ID de Recibo de Nómina")]
         [Required]
-        public FormaPagoEnum FormaPago { get; set; }
+        public string Id { get; set; }
 
-        /// Banco donde se dispersa el pago
-        public string? BancoId { get; set; }
-
-        /// Cuenta de dispersión
-        public string CuentaBancaria { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
-
-        /// Tipo de nómina (0 = Administrativo, 1 = Crew, 2 = Overhead)
+        [Display(Name = "EmpleadoId")]
         [Required]
-        public TipoNominaEnum TipoNomina { get; set; }
+        public string EmpleadoId { get; set; } // Relación con el Empleado
 
-        /// Monto total gravado
-        public string NetoGravado { get; set; }
+        [Display(Name = "Periodo de Nómina")]
+        [Required]
+        public string PeriodoNominaId { get; set; } // Periodo de Nómina
 
-        /// Monto total exento
-        public string NetoExento { get; set; }
+        [Display(Name = "Horas Extras Trabajadas")]
+        [Required]
+        public double HorasExtrasTrabajadas { get; set; } // Horas extras trabajadas
 
-        /// Monto de excedente no fiscalizado
-        public string NetoExcedente { get; set; }
+        [Display(Name = "Horas Extras Autorizadas")]
+        [Required]
+        public double HorasExtrasAutorizadas { get; set; } // Horas extras autorizadas
 
+        [Display(Name = "Total de Percepciones")]
+        public decimal TotalPercepciones { get; set; } // Total de percepciones calculadas
+
+        [Display(Name = "Total de Deducciones")]
+        public decimal TotalDeducciones { get; set; } // Total de deducciones aplicadas
+
+        [Display(Name = "Total Neto")]
+        public decimal TotalNeto { get; set; } // Total neto a pagar
+
+        [Display(Name = "Auditable")]
+        [Required]
+        public Auditable Auditable { get; set; } // Información de auditoría
     }
 }

@@ -1,34 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class RangoToleranciaDto
     {
+        [Display(Name = "ID del rango")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código del rango")]
         [Required]
-        [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public List<string> Codigo { get; set; }
 
+        [Display(Name = "Nombre descriptivo")]
         [Required]
-        [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public List<string> Nombre { get; set; }
 
-        [Display(Name = "MinutosDesde")]
-        public int? MinutosDesde { get; set; }
-
-        [Display(Name = "MinutosHasta")]
-        public int? MinutosHasta { get; set; }
-
-        [Display(Name = "Penalizacion")]
-        public bool? Penalizacion { get; set; }
-
+        [Display(Name = "Minutos desde que inicia el rango")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> MinutosDesde { get; set; }
+
+        [Display(Name = "Minutos hasta donde termina el rango")]
+        [Required]
+        public List<int?> MinutosHasta { get; set; }
+
+        [Display(Name = "¿Aplica descuento? (true/false)")]
+        [Required]
+        public List<bool?> Penalizacion { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

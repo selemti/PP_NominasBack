@@ -1,30 +1,32 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Empleados
 {
     public class HistorialPlazaEmpleado
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EmpleadoId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PlazaIdAnterior { get; set; }
+        [BsonElement("empleadoId")]
+        public List<string> EmpleadoId { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PlazaIdNueva { get; set; }
+        [BsonElement("plazaIdAnterior")]
+        public List<string> PlazaIdAnterior { get; set; }
 
-        public DateTime? FechaCambio { get; set; }
+        [BsonElement("plazaIdNueva")]
+        public List<string> PlazaIdNueva { get; set; }
 
-        public string MotivoCambio { get; set; }
+        [BsonElement("fechaCambio")]
+        public List<DateTime?> FechaCambio { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("motivoCambio")]
+        public List<string> MotivoCambio { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

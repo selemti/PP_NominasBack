@@ -1,37 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Shared
 {
     public class ContactoDto
     {
+        [Display(Name = "ID del contacto")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código de entidad relacionada")]
         [Required]
-        [Display(Name = "TipoEntidad")]
-        public string TipoEntidad { get; set; }
+        public List<string> TipoEntidad { get; set; }
 
+        [Display(Name = "ID de la entidad relacionada")]
         [Required]
-        [Display(Name = "EntidadId")]
-        public string EntidadId { get; set; }
+        public List<string> EntidadId { get; set; }
 
+        [Display(Name = "Nombre del contacto")]
         [Required]
-        [Display(Name = "NombreContacto")]
-        public string NombreContacto { get; set; }
+        public List<string> NombreContacto { get; set; }
 
+        [Display(Name = "Teléfono de contacto")]
         [Required]
-        [Display(Name = "TelefonoContacto")]
-        public string TelefonoContacto { get; set; }
+        public List<string> TelefonoContacto { get; set; }
 
+        [Display(Name = "Parentesco o relación")]
         [Required]
-        [Display(Name = "Parentesco")]
-        public string Parentesco { get; set; }
+        public List<string> Parentesco { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

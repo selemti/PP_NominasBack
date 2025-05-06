@@ -1,25 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Fiscal
 {
     public class TablaInfonavit
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public int? TipoDescuento { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public decimal? ValorDescuento { get; set; }
+        [BsonElement("tipoDescuento")]
+        public List<int?> TipoDescuento { get; set; }
 
-        public string Descripcion { get; set; }
+        [BsonElement("valorDescuento")]
+        public List<decimal?> ValorDescuento { get; set; }
 
-        public int? EjercicioFiscal { get; set; }
+        [BsonElement("descripcion")]
+        public List<string> Descripcion { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("ejercicioFiscal")]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

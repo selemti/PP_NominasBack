@@ -1,28 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Incidencias
 {
     public class TipoIncidenciaDto
     {
+        [Display(Name = "ID del tipo de incidencia")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Nombre del tipo (Incapacidad, Permiso, etc.)")]
         [Required]
-        [Display(Name = "NombreTipoIncidencia")]
-        public string NombreTipoIncidencia { get; set; }
+        public List<string> NombreTipoIncidencia { get; set; }
 
+        [Display(Name = "Descripción breve del tipo")]
         [Required]
-        [Display(Name = "DescripcionTipoIncidencia")]
-        public string DescripcionTipoIncidencia { get; set; }
+        public List<string> DescripcionTipoIncidencia { get; set; }
 
-        [Display(Name = "RequiereJustificante")]
-        public bool? RequiereJustificante { get; set; }
-
+        [Display(Name = "Indica si necesita documento")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<bool?> RequiereJustificante { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

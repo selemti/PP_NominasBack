@@ -1,31 +1,40 @@
+
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class ChecadaDto
     {
+        [Display(Name = "ID de la checada")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empleado que registró la checada")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        [Display(Name = "FechaHora")]
-        public DateTime? FechaHora { get; set; }
-
-        [Display(Name = "TipoEvento")]
-        public int? TipoEvento { get; set; }
-
+        [Display(Name = "Fecha y hora de la checada")]
         [Required]
-        [Display(Name = "DispositivoId")]
-        public string DispositivoId { get; set; }
+        public List<DateTime?> FechaHora { get; set; }
 
+        [Display(Name = "Tipo de evento (0 = Entrada, 1 = Salida)")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> TipoEvento { get; set; }
 
+        [Display(Name = "Dispositivo biométrico usado")]
+        [Required]
+        public List<string> DispositivoId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
+
+        // Nueva propiedad para Horas Trabajadas
+        [Display(Name = "Horas trabajadas")]
+        [Required]
+        public List<double?> HorasTrabajadas { get; set; }
     }
 }

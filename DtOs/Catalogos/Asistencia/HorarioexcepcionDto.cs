@@ -1,31 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class HorarioExcepcionDto
     {
+        [Display(Name = "ID de la excepción")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empleado asociado")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        [Display(Name = "FechaInicio")]
-        public DateTime? FechaInicio { get; set; }
-
-        [Display(Name = "FechaFin")]
-        public DateTime? FechaFin { get; set; }
-
+        [Display(Name = "Inicio de excepción")]
         [Required]
-        [Display(Name = "TurnoEspecialId")]
-        public string TurnoEspecialId { get; set; }
+        public List<DateTime?> FechaInicio { get; set; }
 
+        [Display(Name = "Fin de excepción")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<DateTime?> FechaFin { get; set; }
+
+        [Display(Name = "Turno alterno aplicado")]
+        [Required]
+        public List<string> TurnoEspecialId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,25 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Organizacion
 {
     public class EmpresaCentroTrabajo
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string GrupoEmpresaId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string CentroTrabajoId { get; set; }
+        [BsonElement("grupoEmpresaId")]
+        public List<string> GrupoEmpresaId { get; set; }
 
-        public bool? Vigente { get; set; }
+        [BsonElement("centroTrabajoId")]
+        public List<string> CentroTrabajoId { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("vigente")]
+        public List<bool?> Vigente { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

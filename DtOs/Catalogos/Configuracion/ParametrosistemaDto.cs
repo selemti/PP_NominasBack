@@ -1,29 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Configuracion
 {
     public class ParametroSistemaDto
     {
+        [Display(Name = "ID del parámetro")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Clave única del parámetro")]
         [Required]
-        [Display(Name = "ClaveParametro")]
-        public string ClaveParametro { get; set; }
+        public List<string> ClaveParametro { get; set; }
 
+        [Display(Name = "Valor configurado")]
         [Required]
-        [Display(Name = "ValorParametro")]
-        public string ValorParametro { get; set; }
+        public List<string> ValorParametro { get; set; }
 
+        [Display(Name = "Descripción del parámetro")]
         [Required]
-        [Display(Name = "DescripcionParametro")]
-        public string DescripcionParametro { get; set; }
+        public List<string> DescripcionParametro { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

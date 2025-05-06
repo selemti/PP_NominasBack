@@ -1,26 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Deducciones
+namespace PP_NominasBack.Dtos.Catalogos.Deducciones
 {
-    public class CatalogodeduccionesDto
+    public class CatalogoDeduccionesDto
     {
-        /// (0 = Fiscal, 1 = Crédito, 2 = Préstamo, 3 = Especial, 4 = FONACOT, 5 = Pensión Alimenticia, 6 = Otro, 7 = Multa Interna, 8 = Retención Judicial)
+        [Display(Name = "ID de la deducción")]
         [Required]
-        public TipoDeduccionEnum TipoDeduccion { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Nombre de la deducción
-        public string NombreDeduccion { get; set; }
+        [Display(Name = "(0 = Fiscal, 1 = Crédito, 2 = Préstamo, 3 = Especial, 4 = FONACOT, 5 = Pensión Alimenticia, 6 = Otro, 7 = Multa Interna, 8 = Retención Judicial)")]
+        [Required]
+        public List<int?> TipoDeduccion { get; set; }
 
-        /// Descripción de la deducción
-        public string DescripcionDeduccion { get; set; }
+        [Display(Name = "Nombre de la deducción")]
+        [Required]
+        public List<string> NombreDeduccion { get; set; }
 
-        /// Empresa aplicable
-        public string? AplicaEmpresaId { get; set; }
+        [Display(Name = "Descripción de la deducción")]
+        [Required]
+        public List<string> DescripcionDeduccion { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Empresa aplicable")]
+        [Required]
+        public List<string> AplicaEmpresaId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

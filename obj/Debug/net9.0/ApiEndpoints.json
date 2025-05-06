@@ -1,0 +1,101 @@
+[
+  {
+    "ContainingType": "PP_NominasBack.Controllers.Catalogos.BaseController\u00602[[PP_NominasBack.Models.Catalogos.Empleados.Empleado, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/Empleado",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PP_NominasBack.Controllers.Catalogos.BaseController\u00602[[PP_NominasBack.Models.Catalogos.Empleados.Empleado, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Post",
+    "RelativePath": "api/Empleado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PP_NominasBack.Controllers.Catalogos.BaseController\u00602[[PP_NominasBack.Models.Catalogos.Empleados.Empleado, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Get",
+    "RelativePath": "api/Empleado/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PP_NominasBack.Controllers.Catalogos.BaseController\u00602[[PP_NominasBack.Models.Catalogos.Empleados.Empleado, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Put",
+    "RelativePath": "api/Empleado/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PP_NominasBack.Controllers.Catalogos.BaseController\u00602[[PP_NominasBack.Models.Catalogos.Empleados.Empleado, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[PP_NominasBack.Dtos.Catalogos.Empleados.EmpleadoDto, PP_NominasBack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/Empleado/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

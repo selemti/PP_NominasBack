@@ -1,29 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class CompensacionOvertimeDto
     {
+        [Display(Name = "ID del tipo de compensación")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código corto de compensación")]
         [Required]
-        [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public List<string> Codigo { get; set; }
 
+        [Display(Name = "Nombre del tipo de compensación")]
         [Required]
-        [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public List<string> Nombre { get; set; }
 
+        [Display(Name = "Descripción detallada")]
         [Required]
-        [Display(Name = "Descripcion")]
-        public string Descripcion { get; set; }
+        public List<string> Descripcion { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

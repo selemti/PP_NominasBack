@@ -1,29 +1,35 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Fiscal
 {
     public class TablaIsr
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public decimal? LimiteInferior { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public decimal? LimiteSuperior { get; set; }
+        [BsonElement("limiteInferior")]
+        public List<decimal?> LimiteInferior { get; set; }
 
-        public decimal? CuotaFija { get; set; }
+        [BsonElement("limiteSuperior")]
+        public List<decimal?> LimiteSuperior { get; set; }
 
-        public decimal? PorcentajeExcedente { get; set; }
+        [BsonElement("cuotaFija")]
+        public List<decimal?> CuotaFija { get; set; }
 
-        public int? Periodo { get; set; }
+        [BsonElement("porcentajeExcedente")]
+        public List<decimal?> PorcentajeExcedente { get; set; }
 
-        public int? EjercicioFiscal { get; set; }
+        [BsonElement("periodo")]
+        public List<int?> Periodo { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("ejercicioFiscal")]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,24 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Empleados
 {
     public class EmpleadoContacto
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EmpleadoId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string NombreContacto { get; set; }
+        [BsonElement("empleadoId")]
+        public List<string> EmpleadoId { get; set; }
 
-        public int? Parentesco { get; set; }
+        [BsonElement("nombreContacto")]
+        public List<string> NombreContacto { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("parentesco")]
+        public List<int?> Parentesco { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

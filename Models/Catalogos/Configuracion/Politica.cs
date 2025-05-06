@@ -1,27 +1,32 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Configuracion
 {
     public class Politica
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string NombrePolitica { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string DescripcionPolitica { get; set; }
+        [BsonElement("nombrePolitica")]
+        public List<string> NombrePolitica { get; set; }
 
-        public string VersionPolitica { get; set; }
+        [BsonElement("descripcionPolitica")]
+        public List<string> DescripcionPolitica { get; set; }
 
-        public DateTime? FechaInicioVigencia { get; set; }
+        [BsonElement("versionPolitica")]
+        public List<string> VersionPolitica { get; set; }
 
-        public DateTime? FechaFinVigencia { get; set; }
+        [BsonElement("fechaInicioVigencia")]
+        public List<DateTime?> FechaInicioVigencia { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("fechaFinVigencia")]
+        public List<string> FechaFinVigencia { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

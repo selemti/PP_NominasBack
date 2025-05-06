@@ -1,43 +1,47 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Incidencias
 {
     public class PreNominaIncidenciaDto
     {
+        [Display(Name = "ID de la incidencia ObjectId")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empleado afectado")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
+        [Display(Name = "Periodo en que se aplicará la incidencia")]
         [Required]
-        [Display(Name = "PeriodoNominaId")]
-        public string PeriodoNominaId { get; set; }
+        public List<string> PeriodoNominaId { get; set; }
 
+        [Display(Name = "Tipo de incidencia aplicada")]
         [Required]
-        [Display(Name = "TipoIncidenciaId")]
-        public string TipoIncidenciaId { get; set; }
+        public List<string> TipoIncidenciaId { get; set; }
 
-        [Display(Name = "Fecha")]
-        public DateTime? Fecha { get; set; }
-
-        [Display(Name = "Duracion")]
-        public decimal? Duracion { get; set; }
-
+        [Display(Name = "Fecha en que se aplica")]
         [Required]
-        [Display(Name = "JustificanteAdjunto")]
-        public string JustificanteAdjunto { get; set; }
+        public List<DateTime?> Fecha { get; set; }
 
+        [Display(Name = "Duración en horas o días")]
         [Required]
-        [Display(Name = "Estatus")]
-        public string Estatus { get; set; }
+        public List<decimal?> Duracion { get; set; }
 
+        [Display(Name = "URL del documento (si aplica)")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<string> JustificanteAdjunto { get; set; }
+
+        [Display(Name = "Aprobada, Pendiente, Rechazada")]
+        [Required]
+        public List<string> Estatus { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

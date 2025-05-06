@@ -1,23 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Biometría
+namespace PP_NominasBack.Dtos.Catalogos.Biometria
 {
-    public class LogssincronizacionDto
+    public class LogsSincronizacionDto
     {
-        /// Dispositivo involucrado
-        public string? DispositivoId { get; set; }
-
-        /// Fecha y hora del evento de sincronización
+        [Display(Name = "ID del log de sincronización")]
         [Required]
-        public DateTime FechaEvento { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Mensaje del evento
-        public string DescripcionLog { get; set; }
+        [Display(Name = "Dispositivo involucrado")]
+        [Required]
+        public List<string> DispositivoId { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Fecha y hora del evento de sincronización")]
+        [Required]
+        public List<DateTime?> FechaEvento { get; set; }
+
+        [Display(Name = "Mensaje del evento")]
+        [Required]
+        public List<string> DescripcionLog { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

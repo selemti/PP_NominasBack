@@ -1,25 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Fiscal
+namespace PP_NominasBack.Dtos.Catalogos.Fiscal
 {
-    public class TablavacacionesDto
+    public class TablaVacacionesDto
     {
-        /// Años mínimos cumplidos
-        public string AniosAntiguedadMinimo { get; set; }
+        [Display(Name = "ID del rango de antigüedad")]
+        [Required]
+        public List<string> Id { get; set; }
 
-        /// Años máximos cumplidos
-        public string AniosAntiguedadMaximo { get; set; }
+        [Display(Name = "Años mínimos cumplidos")]
+        [Required]
+        public List<int?> AniosAntiguedadMinimo { get; set; }
 
-        /// Días de vacaciones otorgados
-        public string DiasVacaciones { get; set; }
+        [Display(Name = "Años máximos cumplidos")]
+        [Required]
+        public List<int?> AniosAntiguedadMaximo { get; set; }
 
-        /// Año fiscal aplicable
-        public string EjercicioFiscal { get; set; }
+        [Display(Name = "Días de vacaciones otorgados")]
+        [Required]
+        public List<int?> DiasVacaciones { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Año fiscal aplicable")]
+        [Required]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

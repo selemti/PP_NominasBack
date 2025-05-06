@@ -1,25 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Fiscal
 {
     public class TablaUma
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public decimal? ValorUma { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public DateTime? FechaInicioVigencia { get; set; }
+        [BsonElement("valorUma")]
+        public List<decimal?> ValorUma { get; set; }
 
-        public DateTime? FechaFinVigencia { get; set; }
+        [BsonElement("fechaInicioVigencia")]
+        public List<DateTime?> FechaInicioVigencia { get; set; }
 
-        public int? EjercicioFiscal { get; set; }
+        [BsonElement("fechaFinVigencia")]
+        public List<DateTime?> FechaFinVigencia { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("ejercicioFiscal")]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

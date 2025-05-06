@@ -1,23 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Incidencias
 {
     public class Justificante
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public int? TipoJustificante { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string UrlDocumento { get; set; }
+        [BsonElement("tipoJustificante")]
+        public List<int?> TipoJustificante { get; set; }
 
-        public DateTime? FechaEmision { get; set; }
+        [BsonElement("urlDocumento")]
+        public List<string> UrlDocumento { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("fechaEmision")]
+        public List<DateTime?> FechaEmision { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

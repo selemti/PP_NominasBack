@@ -1,37 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Incidencias
 {
     public class IncapacidadMedicaDto
     {
+        [Display(Name = "ID único de la incapacidad")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empleado afectado")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        [Display(Name = "TipoIncapacidad")]
-        public int? TipoIncapacidad { get; set; }
-
-        [Display(Name = "DiasIncapacidad")]
-        public int? DiasIncapacidad { get; set; }
-
+        [Display(Name = "Tipo (0 = Enfermedad, 1 = Maternidad, 2 = Riesgo)")]
         [Required]
-        [Display(Name = "FolioImss")]
-        public string FolioImss { get; set; }
+        public List<int?> TipoIncapacidad { get; set; }
 
-        [Display(Name = "FechaInicio")]
-        public DateTime? FechaInicio { get; set; }
-
-        [Display(Name = "FechaFin")]
-        public DateTime? FechaFin { get; set; }
-
+        [Display(Name = "Días autorizados por el IMSS")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> DiasIncapacidad { get; set; }
+
+        [Display(Name = "Folio de validación ante IMSS")]
+        [Required]
+        public List<string> FolioImss { get; set; }
+
+        [Display(Name = "Fecha de inicio de la incapacidad")]
+        [Required]
+        public List<DateTime?> FechaInicio { get; set; }
+
+        [Display(Name = "Fecha de fin de la incapacidad")]
+        [Required]
+        public List<DateTime?> FechaFin { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

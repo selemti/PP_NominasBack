@@ -1,34 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Deducciones
+namespace PP_NominasBack.Dtos.Catalogos.Deducciones
 {
-    public class EmpleadodeduccionDto
+    public class EmpleadoDeduccionDto
     {
-        /// Empleado afectado
-        public string? EmpleadoId { get; set; }
-
-        /// Deducción aplicada
-        public string? DeduccionId { get; set; }
-
-        /// Valor a deducir
-        public string Valor { get; set; }
-
-        /// (0 = Única, 1 = Mensual, 2 = Quincenal)
+        [Display(Name = "ID de la asignación")]
         [Required]
-        public PeriodicidadEnum Periodicidad { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Inicio de la deducción
+        [Display(Name = "Empleado afectado")]
         [Required]
-        public DateTime FechaInicio { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        /// Fin (nullable)
+        [Display(Name = "Deducción aplicada")]
         [Required]
-        public DateTime FechaFin { get; set; }
+        public List<string> DeduccionId { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Valor a deducir")]
+        [Required]
+        public List<decimal?> Valor { get; set; }
+
+        [Display(Name = "(0 = Única, 1 = Mensual, 2 = Quincenal)")]
+        [Required]
+        public List<int?> Periodicidad { get; set; }
+
+        [Display(Name = "Inicio de la deducción")]
+        [Required]
+        public List<DateTime?> FechaInicio { get; set; }
+
+        [Display(Name = "Fin (nullable)")]
+        [Required]
+        public List<DateTime?> FechaFin { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

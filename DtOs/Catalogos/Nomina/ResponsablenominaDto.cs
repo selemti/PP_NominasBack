@@ -1,23 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class ResponsablenominaDto
+    public class ResponsableNominaDto
     {
-        /// Usuario que ejecuta o valida nómina
-        public string? UsuarioId { get; set; }
-
-        /// Tipo (0 = Ejecutor, 1 = Validador)
+        [Display(Name = "ID del responsable")]
         [Required]
-        public TipoResponsabilidadEnum TipoResponsabilidad { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Centro de pago relacionado
-        public string? CentroPagoNominaId { get; set; }
+        [Display(Name = "Usuario que ejecuta o valida nómina")]
+        [Required]
+        public List<string> UsuarioId { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Tipo (0 = Ejecutor, 1 = Validador)")]
+        [Required]
+        public List<int?> TipoResponsabilidad { get; set; }
+
+        [Display(Name = "Centro de pago relacionado")]
+        [Required]
+        public List<string> CentroPagoNominaId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,22 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class DetallededuccionesDto
+    public class DetalleDeduccionesDto
     {
-        /// Recibo de nómina asociado
-        public string? ReciboNominaId { get; set; }
+        [Display(Name = "ID del detalle de deducción")]
+        [Required]
+        public List<string> Id { get; set; }
 
-        /// Concepto de deducción aplicada
-        public string? TipoDeduccionId { get; set; }
+        [Display(Name = "Recibo de nómina asociado")]
+        [Required]
+        public List<string> ReciboNominaId { get; set; }
 
-        /// Monto de la deducción
-        public string Monto { get; set; }
+        [Display(Name = "Concepto de deducción aplicada")]
+        [Required]
+        public List<string> TipoDeduccionId { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Monto de la deducción")]
+        [Required]
+        public List<decimal?> Monto { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

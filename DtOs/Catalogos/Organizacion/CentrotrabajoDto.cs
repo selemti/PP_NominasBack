@@ -1,25 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Organización
+namespace PP_NominasBack.Dtos.Catalogos.Organización
 {
-    public class CentrotrabajoDto
+    public class CentroTrabajoDto
     {
-        /// Nombre del centro de trabajo
-        public string NombreCentroTrabajo { get; set; }
-
-        /// Clave oficial ante IMSS
-        public string ClaveCentroTrabajo { get; set; }
-
-        /// Dirección principal
-        public string? DireccionId { get; set; }
-
-        /// Número de registro patronal
-        public string RegistroPatronal { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Enum funcional extendido para RH")]
+        [Required]
+        public List<int?> TipoCentroTrabajo { get; set; }
 
     }
 }

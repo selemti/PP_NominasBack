@@ -1,7 +1,35 @@
 using AutoMapper;
+using PP_NominasBack.Models.Catalogos.Asistencia;
+using PP_NominasBack.Dtos.Catalogos.Asistencia;
+using PP_NominasBack.Models.Catalogos.Biometria;
+using PP_NominasBack.Dtos.Catalogos.Biometria;
+using PP_NominasBack.Models.Catalogos.Compensaciones;
+using PP_NominasBack.Dtos.Catalogos.Compensaciones;
+using PP_NominasBack.Models.Catalogos.Configuracion;
+using PP_NominasBack.Dtos.Catalogos.Configuracion;
+using PP_NominasBack.Models.Catalogos.Deducciones;
+using PP_NominasBack.Dtos.Catalogos.Deducciones;
+using PP_NominasBack.Models.Catalogos.Empleados;
+using PP_NominasBack.Dtos.Catalogos.Empleados;
+using PP_NominasBack.Models.Catalogos.Fiscal;
+using PP_NominasBack.Dtos.Catalogos.Fiscal;
+using PP_NominasBack.Models.Catalogos.Incidencias;
+using PP_NominasBack.Dtos.Catalogos.Incidencias;
+using PP_NominasBack.Models.Catalogos.Nomina;
+using PP_NominasBack.Dtos.Catalogos.Nomina;
+using PP_NominasBack.Models.Catalogos.Organizacion;
+using PP_NominasBack.Dtos.Catalogos.Organizacion;
+using PP_NominasBack.Models.Catalogos.Prenomina;
+using PP_NominasBack.Dtos.Catalogos.Prenomina;
+using PP_NominasBack.Models.Catalogos.Prestaciones;
+using PP_NominasBack.Dtos.Catalogos.Prestaciones;
+using PP_NominasBack.Models.Catalogos.Seguridad;
+using PP_NominasBack.Dtos.Catalogos.Seguridad;
 using PP_NominasBack.Dtos.Catalogos.Shared;
-using PP_NominasBack.Models.Catalogos;
-using PP_NominasBack.Dtos.Catalogos;
+using PP_NominasBack.Models.Catalogos.Vacaciones;
+using PP_NominasBack.Dtos.Catalogos.Vacaciones;
+using PP_NominasBack.Dtos.Catalogos.Organización;
+using PP_NominasBack.Models.Catalogos.Organización;
 
 namespace PP_NominasBack.Profiles
 {
@@ -9,83 +37,126 @@ namespace PP_NominasBack.Profiles
     {
         public CatalogosProfile()
         {
-            CreateMap<Models.Catalogos.Empleados.Empleado, Dtos.Catalogos.Empleados.EmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.ContratoEmpleado, Dtos.Catalogos.Empleados.ContratoEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.ArchivoEmpleado, Dtos.Catalogos.Empleados.ArchivoEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.DatosPagoEmpleado, Dtos.Catalogos.Empleados.DatosPagoEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.AsignacionPlazaEmpleado, Dtos.Catalogos.Empleados.AsignacionPlazaEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.HistorialPlazaEmpleado, Dtos.Catalogos.Empleados.HistorialPlazaEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.EmpleadoContacto, Dtos.Catalogos.Empleados.EmpleadoContactoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Empleados.TipoArchivoEmpleado, Dtos.Catalogos.Empleados.TipoArchivoEmpleadoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.GrupoEmpresa, Dtos.Catalogos.Organizacion.GrupoEmpresaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Division, Dtos.Catalogos.Organizacion.DivisionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Puesto, Dtos.Catalogos.Organizacion.PuestoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Departamento, Dtos.Catalogos.Organizacion.DepartamentoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Plaza, Dtos.Catalogos.Organizacion.PlazaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Nan.CentroTrabajo, Dtos.Catalogos.Nan.CentroTrabajoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.EmpresaCentroTrabajo, Dtos.Catalogos.Organizacion.EmpresaCentroTrabajoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Organigrama, Dtos.Catalogos.Organizacion.OrganigramaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Organizacion.Ubicacion, Dtos.Catalogos.Organizacion.UbicacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.Turno, Dtos.Catalogos.Asistencia.TurnoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.PlantillaTurnoDetalle, Dtos.Catalogos.Asistencia.PlantillaTurnoDetalleDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.HorarioPlantilla, Dtos.Catalogos.Asistencia.HorarioPlantillaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.PlantillaMensual, Dtos.Catalogos.Asistencia.PlantillaMensualDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.Checada, Dtos.Catalogos.Asistencia.ChecadaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.ChecadaRemota, Dtos.Catalogos.Asistencia.ChecadaRemotaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.ChecadaAgregada, Dtos.Catalogos.Asistencia.ChecadaAgregadaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.RangoTolerancia, Dtos.Catalogos.Asistencia.RangoToleranciaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.CompensacionOvertime, Dtos.Catalogos.Asistencia.CompensacionOvertimeDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.CalendarioLaboral, Dtos.Catalogos.Asistencia.CalendarioLaboralDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Asistencia.HorarioExcepcion, Dtos.Catalogos.Asistencia.HorarioExcepcionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.Incidencia, Dtos.Catalogos.Incidencias.IncidenciaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.TipoIncidencia, Dtos.Catalogos.Incidencias.TipoIncidenciaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.Justificante, Dtos.Catalogos.Incidencias.JustificanteDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.HistorialIncidencia, Dtos.Catalogos.Incidencias.HistorialIncidenciaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.PreNominaIncidencia, Dtos.Catalogos.Incidencias.PreNominaIncidenciaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Incidencias.IncapacidadMedica, Dtos.Catalogos.Incidencias.IncapacidadMedicaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.VacacionesPermisos.Vacaciones, Dtos.Catalogos.VacacionesPermisos.VacacionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.VacacionesPermisos.PeriodoVacacional, Dtos.Catalogos.VacacionesPermisos.PeriodoVacacionalDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.ConfiguracionNomina, Dtos.Catalogos.PrenominaNomina.ConfiguracionNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.PeriodoNomina, Dtos.Catalogos.PrenominaNomina.PeriodoNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.TipoPeriodo, Dtos.Catalogos.PrenominaNomina.TipoPeriodoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.ControlCierrePrenomina, Dtos.Catalogos.PrenominaNomina.ControlCierrePrenominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.DetallePercepciones, Dtos.Catalogos.PrenominaNomina.DetallePercepcionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.DetalleDeducciones, Dtos.Catalogos.PrenominaNomina.DetalleDeduccionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.ReciboNomina, Dtos.Catalogos.PrenominaNomina.ReciboNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.HistorialValidacion, Dtos.Catalogos.PrenominaNomina.HistorialValidacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.PrenominaNomina.CfdiNomina, Dtos.Catalogos.PrenominaNomina.CfdiNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.ContratosPrestaciones.TipoContrato, Dtos.Catalogos.ContratosPrestaciones.TipoContratoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.ContratosPrestaciones.TabuladorSalarial, Dtos.Catalogos.ContratosPrestaciones.TabuladorSalarialDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.CatalogoCompensaciones, Dtos.Catalogos.CompensacionesDeducciones.CatalogoCompensacionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.CatalogoPrestaciones, Dtos.Catalogos.CompensacionesDeducciones.CatalogoPrestacionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.CatalogoDeducciones, Dtos.Catalogos.CompensacionesDeducciones.CatalogoDeduccionesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.FiniquitoLiquidacion, Dtos.Catalogos.CompensacionesDeducciones.FiniquitoLiquidacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.EmpleadoCompensacion, Dtos.Catalogos.CompensacionesDeducciones.EmpleadoCompensacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.CompensacionesDeducciones.EmpleadoDeduccion, Dtos.Catalogos.CompensacionesDeducciones.EmpleadoDeduccionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.ControlPago.CentroPagoNomina, Dtos.Catalogos.ControlPago.CentroPagoNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.ControlPago.ResponsableNomina, Dtos.Catalogos.ControlPago.ResponsableNominaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Fiscal.TablaIsr, Dtos.Catalogos.Fiscal.TablaIsrDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Fiscal.TablaImss, Dtos.Catalogos.Fiscal.TablaImssDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Fiscal.TablaUma, Dtos.Catalogos.Fiscal.TablaUmaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Fiscal.TablaInfonavit, Dtos.Catalogos.Fiscal.TablaInfonavitDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Fiscal.CuotaObreroPatronal, Dtos.Catalogos.Fiscal.CuotaObreroPatronalDto>().ReverseMap();
-            CreateMap<Models.Catalogos.FondosAhorro.FondoAhorro, Dtos.Catalogos.FondosAhorro.FondoAhorroDto>().ReverseMap();
-            CreateMap<Models.Catalogos.FondosAhorro.MovimientoFondoAhorro, Dtos.Catalogos.FondosAhorro.MovimientoFondoAhorroDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Seguridad.Usuario, Dtos.Catalogos.Seguridad.UsuarioDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Seguridad.Perfil, Dtos.Catalogos.Seguridad.PerfilDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Configuracion.ParametroSistema, Dtos.Catalogos.Configuracion.ParametroSistemaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Configuracion.ConfiguracionGlobal, Dtos.Catalogos.Configuracion.ConfiguracionGlobalDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Configuracion.Politica, Dtos.Catalogos.Configuracion.PoliticaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Shared.Auditable, Dtos.Catalogos.Shared.AuditableDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Shared.Persona, Dtos.Catalogos.Shared.PersonaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Shared.Telefono, Dtos.Catalogos.Shared.TelefonoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Shared.Direccion, Dtos.Catalogos.Shared.DireccionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.Shared.Contacto, Dtos.Catalogos.Shared.ContactoDto>().ReverseMap();
-            CreateMap<Models.Catalogos.AlertasValidacionesEnums.FlujoValidacion, Dtos.Catalogos.AlertasValidacionesEnums.FlujoValidacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.AlertasValidacionesEnums.PasoFlujoValidacion, Dtos.Catalogos.AlertasValidacionesEnums.PasoFlujoValidacionDto>().ReverseMap();
-            CreateMap<Models.Catalogos.AlertasValidacionesEnums.DestinatarioAlerta, Dtos.Catalogos.AlertasValidacionesEnums.DestinatarioAlertaDto>().ReverseMap();
-            CreateMap<Models.Catalogos.AlertasValidacionesEnums.CatalogoEntidades, Dtos.Catalogos.AlertasValidacionesEnums.CatalogoEntidadesDto>().ReverseMap();
-            CreateMap<Models.Catalogos.AlertasValidacionesEnums.CatalogoEnums, Dtos.Catalogos.AlertasValidacionesEnums.CatalogoEnumsDto>().ReverseMap();
+            // Asistencia
+            CreateMap<CalendarioLaboral, CalendarioLaboralDto>().ReverseMap();
+            CreateMap<Checada, ChecadaDto>().ReverseMap();
+            CreateMap<ChecadaAgregada, ChecadaAgregadaDto>().ReverseMap();
+            CreateMap<ChecadaRemota, ChecadaRemotaDto>().ReverseMap();
+            CreateMap<CompensacionOvertime, CompensacionOvertimeDto>().ReverseMap();
+            CreateMap<HoraCategoria, HoraCategoriaDto>().ReverseMap();
+            CreateMap<Horario, HorarioDto>().ReverseMap();
+            CreateMap<HorarioExcepcion, HorarioExcepcionDto>().ReverseMap();
+            CreateMap<HorarioPlantilla, HorarioPlantillaDto>().ReverseMap();
+            CreateMap<Incidencia, IncidenciaDto>().ReverseMap();
+            CreateMap<PlantillaMensual, PlantillaMensualDto>().ReverseMap();
+            CreateMap<PlantillaTurnoDetalle, PlantillaTurnoDetalleDto>().ReverseMap();
+            CreateMap<RangoTolerancia, RangoToleranciaDto>().ReverseMap();
+            CreateMap<Turno, TurnoDto>().ReverseMap();
+
+            // Biometria
+            CreateMap<DispositivoBiometrico, DispositivoBiometricoDto>().ReverseMap();
+            CreateMap<LogsSincronizacion, LogsSincronizacionDto>().ReverseMap();
+            CreateMap<TipoEventoBiometrico, TipoEventoBiometricoDto>().ReverseMap();
+
+            // Compensaciones
+            CreateMap<CatalogoCompensaciones, CatalogoCompensacionesDto>().ReverseMap();
+            CreateMap<EmpleadoCompensacion, EmpleadoCompensacionDto>().ReverseMap();
+            CreateMap<FondoAhorro, FondoAhorroDto>().ReverseMap();
+            CreateMap<MovimientoFondoAhorro, MovimientoFondoAhorroDto>().ReverseMap();
+            CreateMap<TabuladorSalarial, TabuladorSalarialDto>().ReverseMap();
+
+            // Configuracion
+            CreateMap<ConfiguracionGlobal, ConfiguracionGlobalDto>().ReverseMap();
+            CreateMap<Modulo, ModuloDto>().ReverseMap();
+            CreateMap<ParametroSistema, ParametroSistemaDto>().ReverseMap();
+            CreateMap<Politica, PoliticaDto>().ReverseMap();
+
+            // Deducciones
+            CreateMap<CatalogoDeducciones, CatalogoDeduccionesDto>().ReverseMap();
+            CreateMap<EmpleadoDeduccion, EmpleadoDeduccionDto>().ReverseMap();
+
+            // Empleados
+            CreateMap<ArchivoEmpleado, ArchivoEmpleadoDto>().ReverseMap();
+            CreateMap<AsignacionPlazaEmpleado, AsignacionPlazaEmpleadoDto>().ReverseMap();
+            CreateMap<ContratoEmpleado, ContratoEmpleadoDto>().ReverseMap();
+            CreateMap<DatosPagoEmpleado, DatosPagoEmpleadoDto>().ReverseMap();
+            CreateMap<Direccion, DireccionDto>().ReverseMap();
+            CreateMap<Empleado, EmpleadoDto>().ReverseMap();
+            CreateMap<EmpleadoContacto, EmpleadoContactoDto>().ReverseMap();
+            CreateMap<HistorialPlazaEmpleado, HistorialPlazaEmpleadoDto>().ReverseMap();
+            CreateMap<Persona, PersonaDto>().ReverseMap();
+            CreateMap<RegistroImss, RegistroImssDto>().ReverseMap();
+            CreateMap<TipoArchivoEmpleado, TipoArchivoEmpleadoDto>().ReverseMap();
+            CreateMap<TipoContrato, TipoContratoDto>().ReverseMap();
+
+            // Fiscal
+            CreateMap<CuotaObreroPatronal, CuotaObreroPatronalDto>().ReverseMap();
+            CreateMap<TablaImss, TablaImssDto>().ReverseMap();
+            CreateMap<TablaInfonavit, TablaInfonavitDto>().ReverseMap();
+            CreateMap<TablaIsr, TablaIsrDto>().ReverseMap();
+            CreateMap<TablaUma, TablaUmaDto>().ReverseMap();
+            CreateMap<TablaVacaciones, TablaVacacionesDto>().ReverseMap();
+
+            // Incidencias
+            CreateMap<HistorialIncidencia, HistorialIncidenciaDto>().ReverseMap();
+            CreateMap<IncapacidadMedica, IncapacidadMedicaDto>().ReverseMap();
+            CreateMap<Justificante, JustificanteDto>().ReverseMap();
+            CreateMap<PreNominaIncidencia, PreNominaIncidenciaDto>().ReverseMap();
+            CreateMap<TipoIncidencia, TipoIncidenciaDto>().ReverseMap();
+
+            // Nomina
+            CreateMap<CentroPagoNomina, CentroPagoNominaDto>().ReverseMap();
+            CreateMap<CfdiNomina, CfdiNominaDto>().ReverseMap();
+            CreateMap<ConfiguracionNomina, ConfiguracionNominaDto>().ReverseMap();
+            CreateMap<DetalleDeducciones, DetalleDeduccionesDto>().ReverseMap();
+            CreateMap<DetallePercepciones, DetallePercepcionesDto>().ReverseMap();
+            CreateMap<FiniquitoLiquidacion, FiniquitoLiquidacionDto>().ReverseMap();
+            CreateMap<PeriodoNomina, PeriodoNominaDto>().ReverseMap();
+            CreateMap<ReciboNomina, ReciboNominaDto>().ReverseMap();
+            CreateMap<ResponsableNomina, ResponsableNominaDto>().ReverseMap();
+
+            // Finiquitos
+            CreateMap<FiniquitoLiquidacion, FiniquitoLiquidacionDto>().ReverseMap();
+            CreateMap<ConceptoFiniquito, ConceptoFiniquitoDto>().ReverseMap();
+
+            // Organizacion
+            CreateMap<CentroTrabajo, CentroTrabajoDto>().ReverseMap();
+            CreateMap<Departamento, DepartamentoDto>().ReverseMap();
+            CreateMap<Division, DivisionDto>().ReverseMap();
+            CreateMap<EmpresaCentroTrabajo, EmpresaCentroTrabajoDto>().ReverseMap();
+            CreateMap<GrupoEmpresa, GrupoEmpresaDto>().ReverseMap();
+            CreateMap<HistorialUbicacionEmpleado, HistorialUbicacionEmpleadoDto>().ReverseMap();
+            CreateMap<Organigrama, OrganigramaDto>().ReverseMap();
+            CreateMap<Plaza, PlazaDto>().ReverseMap();
+            CreateMap<Puesto, PuestoDto>().ReverseMap();
+            CreateMap<Ubicacion, UbicacionDto>().ReverseMap();
+
+            // Prenomina
+            CreateMap<ControlCierrePrenomina, ControlCierrePrenominaDto>().ReverseMap();
+            CreateMap<HistorialValidacion, HistorialValidacionDto>().ReverseMap();
+            CreateMap<TipoPeriodo, TipoPeriodoDto>().ReverseMap();
+
+            // Prestaciones
+            CreateMap<CatalogoPrestaciones, CatalogoPrestacionesDto>().ReverseMap();
+
+            // Seguridad
+            CreateMap<HistorialRegistroImss, HistorialRegistroImssDto>().ReverseMap();
+            CreateMap<Perfil, PerfilDto>().ReverseMap();
+            CreateMap<RegistroPatronal, RegistroPatronalDto>().ReverseMap();
+            CreateMap<Usuario, UsuarioDto>().ReverseMap();
+
+            // Shared
+            CreateMap<AlertaNotificacion, AlertaNotificacionDto>().ReverseMap();
+            CreateMap<Auditable, AuditableDto>().ReverseMap();
+            CreateMap<CatalogoEntidades, CatalogoEntidadesDto>().ReverseMap();
+            //CreateMap<CatalogoEnums, CatalogoEnumsDto>().ReverseMap();
+            CreateMap<Contacto, ContactoDto>().ReverseMap();
+            CreateMap<Telefono, TelefonoDto>().ReverseMap();
+
+            // Vacaciones
+            CreateMap<PeriodoVacacional, PeriodoVacacionalDto>().ReverseMap();
+            CreateMap<Permiso, PermisoDto>().ReverseMap();
+            CreateMap<Vacaciones, VacacionesDto>().ReverseMap();
         }
     }
 }

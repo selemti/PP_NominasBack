@@ -1,28 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Empleados
 {
     public class TipoArchivoEmpleadoDto
     {
+        [Display(Name = "ID del tipo de archivo")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código corto del tipo")]
         [Required]
-        [Display(Name = "Codigo")]
-        public string Codigo { get; set; }
+        public List<string> Codigo { get; set; }
 
+        [Display(Name = "Nombre del documento")]
         [Required]
-        [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public List<string> Nombre { get; set; }
 
-        [Display(Name = "Requerido")]
-        public bool? Requerido { get; set; }
-
+        [Display(Name = "Es obligatorio cargarlo")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<bool?> Requerido { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

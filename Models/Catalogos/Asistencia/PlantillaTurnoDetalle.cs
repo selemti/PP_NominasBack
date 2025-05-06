@@ -1,28 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Asistencia
 {
     public class PlantillaTurnoDetalle
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PlantillaId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public DateTime? Fecha { get; set; }
+        [BsonElement("plantillaId")]
+        public List<string> PlantillaId { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string TurnoId { get; set; }
+        [BsonElement("fecha")]
+        public List<DateTime?> Fecha { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PlazaId { get; set; }
+        [BsonElement("turnoId")]
+        public List<string> TurnoId { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("plazaId")]
+        public List<string> PlazaId { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

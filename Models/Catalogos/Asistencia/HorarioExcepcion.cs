@@ -1,27 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Asistencia
 {
     public class HorarioExcepcion
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EmpleadoId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public DateTime? FechaInicio { get; set; }
+        [BsonElement("empleadoId")]
+        public List<string> EmpleadoId { get; set; }
 
-        public DateTime? FechaFin { get; set; }
+        [BsonElement("fechaInicio")]
+        public List<DateTime?> FechaInicio { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string TurnoEspecialId { get; set; }
+        [BsonElement("fechaFin")]
+        public List<DateTime?> FechaFin { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("turnoEspecialId")]
+        public List<string> TurnoEspecialId { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

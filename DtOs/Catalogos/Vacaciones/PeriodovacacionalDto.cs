@@ -1,19 +1,27 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Vacaciones
+namespace PP_NominasBack.Dtos.Catalogos.Vacaciones
 {
-    public class PeriodovacacionalDto
+    public class PeriodoVacacionalDto
     {
-        /// Año aplicable
-        public string Anio { get; set; }
+        [Display(Name = "ID del periodo vacacional anual")]
+        [Required]
+        public List<string> Id { get; set; }
 
-        /// Días asignados anuales
-        public string DiasAsignados { get; set; }
+        [Display(Name = "Año aplicable")]
+        [Required]
+        public List<int?> Anio { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Días asignados anuales")]
+        [Required]
+        public List<int?> DiasAsignados { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

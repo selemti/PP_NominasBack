@@ -1,29 +1,29 @@
+// Dtos/Catalogos/Nomina/FiniquitoLiquidacionDto.cs
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class FiniquitoliquidacionDto
+    public class FiniquitoLiquidacionDto
     {
-        /// Empleado liquidado
-        public string? EmpleadoId { get; set; }
+        [Display(Name = "Empleado")]
+        [Required]
+        public string EmpleadoId { get; set; } = null!;
 
-        /// Fecha del finiquito/liquidación
+        [Display(Name = "Fecha de finiquito")]
         [Required]
         public DateTime FechaFiniquito { get; set; }
 
-        /// Listado de percepciones/deducciones aplicadas
-        public required string Conceptos { get; set; }
+        [Display(Name = "ISR calculado")]
+        [Required]
+        public decimal IsrCalculado { get; set; }
 
-        /// ISR especial calculado para finiquito
-        public required string IsrCalculado { get; set; }
+        [Display(Name = "Total finiquito")]
+        [Required]
+        public decimal TotalFiniquito { get; set; }
 
-        /// Neto a pagar por finiquito/liquidación
-        public required string TotalFiniquito { get; set; }
-
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
-
+        [Display(Name = "Conceptos")]
+        public List<ConceptoFiniquitoDto> Conceptos { get; set; } = new();
     }
 }

@@ -1,27 +1,32 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Asistencia
 {
     public class Checada
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EmpleadoId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public DateTime? FechaHora { get; set; }
+        [BsonElement("empleadoId")]
+        public List<string> EmpleadoId { get; set; }
 
-        public int? TipoEvento { get; set; }
+        [BsonElement("fechaHora")]
+        public List<DateTime?> FechaHora { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string DispositivoId { get; set; }
+        [BsonElement("tipoEvento")]
+        public List<int?> TipoEvento { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("dispositivoId")]
+        public List<string> DispositivoId { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
+
+        [BsonElement("horasTrabajadas")]
+        public List<double?> HorasTrabajadas { get; set; }
 
     }
 }

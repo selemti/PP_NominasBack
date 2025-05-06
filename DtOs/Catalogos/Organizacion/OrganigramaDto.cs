@@ -1,36 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Organizacion
 {
     public class OrganigramaDto
     {
+        [Display(Name = "ID único del nodo")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "División o UDN relacionada")]
         [Required]
-        [Display(Name = "DivisionId")]
-        public string DivisionId { get; set; }
+        public List<string> DivisionId { get; set; }
 
+        [Display(Name = "Puesto del nodo")]
         [Required]
-        [Display(Name = "PuestoId")]
-        public string PuestoId { get; set; }
+        public List<string> PuestoId { get; set; }
 
+        [Display(Name = "Centro de costo asignado")]
         [Required]
-        [Display(Name = "CentroCostoId")]
-        public string CentroCostoId { get; set; }
+        public List<string> CentroCostoId { get; set; }
 
+        [Display(Name = "Padre del nodo en estructura")]
         [Required]
-        [Display(Name = "NodoPadreId")]
-        public string NodoPadreId { get; set; }
+        public List<string> NodoPadreId { get; set; }
 
-        [Display(Name = "Nivel")]
-        public int? Nivel { get; set; }
-
+        [Display(Name = "Nivel jerárquico")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> Nivel { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,27 +1,32 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Fiscal
 {
     public class TablaImss
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string Concepto { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public decimal? PorcentajePatronal { get; set; }
+        [BsonElement("concepto")]
+        public List<string> Concepto { get; set; }
 
-        public decimal? PorcentajeObrero { get; set; }
+        [BsonElement("porcentajePatronal")]
+        public List<decimal?> PorcentajePatronal { get; set; }
 
-        public bool? SalarioMinimoAplica { get; set; }
+        [BsonElement("porcentajeObrero")]
+        public List<decimal?> PorcentajeObrero { get; set; }
 
-        public int? EjercicioFiscal { get; set; }
+        [BsonElement("salarioMinimoAplica")]
+        public List<bool?> SalarioMinimoAplica { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("ejercicioFiscal")]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

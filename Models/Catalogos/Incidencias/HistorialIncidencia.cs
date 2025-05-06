@@ -1,24 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Incidencias
 {
     public class HistorialIncidencia
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string IncidenciaId { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public DateTime? FechaCambio { get; set; }
+        [BsonElement("incidenciaId")]
+        public List<string> IncidenciaId { get; set; }
 
-        public string DescripcionCambio { get; set; }
+        [BsonElement("fechaCambio")]
+        public List<DateTime?> FechaCambio { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("descripcionCambio")]
+        public List<string> DescripcionCambio { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

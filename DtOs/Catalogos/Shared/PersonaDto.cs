@@ -1,52 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Shared
 {
     public class PersonaDto
     {
+        [Display(Name = "CURP del empleado")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Curp { get; set; }
 
+        [Display(Name = "RFC del empleado")]
         [Required]
-        [Display(Name = "Curp")]
-        public string Curp { get; set; }
+        public List<string> Rfc { get; set; }
 
+        [Display(Name = "Correo electrónico del empleado")]
         [Required]
-        [Display(Name = "Rfc")]
-        public string Rfc { get; set; }
+        public List<string> Email { get; set; }
 
+        [Display(Name = "País de origen")]
         [Required]
-        [Display(Name = "Nombre")]
-        public string Nombre { get; set; }
+        public List<string> Nacionalidad { get; set; }
 
+        [Display(Name = "Domicilio de la persona")]
         [Required]
-        [Display(Name = "ApellidoPaterno")]
-        public string ApellidoPaterno { get; set; }
+        public List<Direccion>? Direccion { get; set; }
 
+        [Display(Name = "Teléfonos personales")]
         [Required]
-        [Display(Name = "ApellidoMaterno")]
-        public string ApellidoMaterno { get; set; }
-
-        [Display(Name = "FechaNacimiento")]
-        public DateTime? FechaNacimiento { get; set; }
-
-        [Display(Name = "Sexo")]
-        public int? Sexo { get; set; }
-
-        [Display(Name = "EstadoCivil")]
-        public int? EstadoCivil { get; set; }
-
-        [Display(Name = "NivelEstudio")]
-        public int? NivelEstudio { get; set; }
-
-        [Display(Name = "TipoSangre")]
-        public int? TipoSangre { get; set; }
-
-        [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<List<Telefono>?> Telefonos { get; set; }
 
     }
 }

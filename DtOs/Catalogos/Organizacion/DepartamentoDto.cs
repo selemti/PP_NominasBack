@@ -1,29 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Organizacion
 {
     public class DepartamentoDto
     {
+        [Display(Name = "ID del departamento")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Código del departamento")]
         [Required]
-        [Display(Name = "ClaveDepartamento")]
-        public string ClaveDepartamento { get; set; }
+        public List<string> ClaveDepartamento { get; set; }
 
+        [Display(Name = "Nombre del departamento")]
         [Required]
-        [Display(Name = "NombreDepartamento")]
-        public string NombreDepartamento { get; set; }
+        public List<string> NombreDepartamento { get; set; }
 
+        [Display(Name = "División a la que pertenece")]
         [Required]
-        [Display(Name = "DivisionId")]
-        public string DivisionId { get; set; }
+        public List<string> DivisionId { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

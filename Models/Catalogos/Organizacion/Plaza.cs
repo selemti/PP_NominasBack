@@ -1,29 +1,32 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Organizacion
 {
     public class Plaza
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string ClavePlaza { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string NombrePlaza { get; set; }
+        [BsonElement("clavePlaza")]
+        public List<string> ClavePlaza { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PuestoId { get; set; }
+        [BsonElement("nombrePlaza")]
+        public List<string> NombrePlaza { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string DepartamentoId { get; set; }
+        [BsonElement("puestoId")]
+        public List<string> PuestoId { get; set; }
 
-        public int? EstatusPlaza { get; set; }
+        [BsonElement("departamentoId")]
+        public List<string> DepartamentoId { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("estatusPlaza")]
+        public List<int?> EstatusPlaza { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,23 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Configuracion
 {
     public class ParametroSistema
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string ClaveParametro { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string ValorParametro { get; set; }
+        [BsonElement("claveParametro")]
+        public List<string> ClaveParametro { get; set; }
 
-        public string DescripcionParametro { get; set; }
+        [BsonElement("valorParametro")]
+        public List<string> ValorParametro { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("descripcionParametro")]
+        public List<string> DescripcionParametro { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

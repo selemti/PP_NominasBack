@@ -1,27 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Incidencias
 {
     public class JustificanteDto
     {
+        [Display(Name = "ID del justificante de incidencia")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
-        [Display(Name = "TipoJustificante")]
-        public int? TipoJustificante { get; set; }
-
+        [Display(Name = "Tipo de documento (certificado médico, etc.)")]
         [Required]
-        [Display(Name = "UrlDocumento")]
-        public string UrlDocumento { get; set; }
+        public List<int?> TipoJustificante { get; set; }
 
-        [Display(Name = "FechaEmision")]
-        public DateTime? FechaEmision { get; set; }
-
+        [Display(Name = "URL del archivo digital")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<string> UrlDocumento { get; set; }
+
+        [Display(Name = "Fecha de emisión del documento")]
+        [Required]
+        public List<DateTime?> FechaEmision { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

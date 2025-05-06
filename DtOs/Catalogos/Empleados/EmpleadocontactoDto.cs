@@ -1,28 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Empleados
 {
     public class EmpleadoContactoDto
     {
+        [Display(Name = "ID del contacto")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "ID del empleado")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
+        [Display(Name = "Nombre completo del contacto")]
         [Required]
-        [Display(Name = "NombreContacto")]
-        public string NombreContacto { get; set; }
+        public List<string> NombreContacto { get; set; }
 
-        [Display(Name = "Parentesco")]
-        public int? Parentesco { get; set; }
-
+        [Display(Name = "Parentesco (enum)")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> Parentesco { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

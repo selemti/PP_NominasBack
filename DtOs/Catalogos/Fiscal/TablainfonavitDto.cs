@@ -1,30 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Fiscal
 {
     public class TablaInfonavitDto
     {
+        [Display(Name = "ID de tabla de Infonavit")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
-        [Display(Name = "TipoDescuento")]
-        public int? TipoDescuento { get; set; }
-
-        [Display(Name = "ValorDescuento")]
-        public decimal? ValorDescuento { get; set; }
-
+        [Display(Name = "Tipo (0 = Factor Salario, 1 = Cuota Fija)")]
         [Required]
-        [Display(Name = "Descripcion")]
-        public string Descripcion { get; set; }
+        public List<int?> TipoDescuento { get; set; }
 
-        [Display(Name = "EjercicioFiscal")]
-        public int? EjercicioFiscal { get; set; }
-
+        [Display(Name = "Valor aplicable del descuento")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<decimal?> ValorDescuento { get; set; }
+
+        [Display(Name = "Descripción adicional")]
+        [Required]
+        public List<string> Descripcion { get; set; }
+
+        [Display(Name = "Año fiscal aplicable")]
+        [Required]
+        public List<int?> EjercicioFiscal { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

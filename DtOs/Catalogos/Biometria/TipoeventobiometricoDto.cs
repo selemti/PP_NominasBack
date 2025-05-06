@@ -1,23 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Biometría
+namespace PP_NominasBack.Dtos.Catalogos.Biometria
 {
-    public class TipoeventobiometricoDto
+    public class TipoEventoBiometricoDto
     {
-        /// Nombre del evento (entrada, salida, comida, etc.)
-        public string NombreEvento { get; set; }
-
-        /// Descripción detallada del evento
-        public string DescripcionEvento { get; set; }
-
-        /// Estatus activo del tipo de evento
+        [Display(Name = "ID del tipo de evento")]
         [Required]
-        public bool Activo { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Nombre del evento (entrada, salida, comida, etc.)")]
+        [Required]
+        public List<string> NombreEvento { get; set; }
+
+        [Display(Name = "Descripción detallada del evento")]
+        [Required]
+        public List<string> DescripcionEvento { get; set; }
+
+        [Display(Name = "Estatus activo del tipo de evento")]
+        [Required]
+        public List<bool?> Activo { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

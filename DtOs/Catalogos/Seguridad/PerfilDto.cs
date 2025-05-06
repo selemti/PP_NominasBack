@@ -1,25 +1,27 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Seguridad
 {
     public class PerfilDto
     {
+        [Display(Name = "ID del perfil")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Nombre del perfil")]
         [Required]
-        [Display(Name = "NombrePerfil")]
-        public string NombrePerfil { get; set; }
+        public List<string> NombrePerfil { get; set; }
 
+        [Display(Name = "Descripción funcional")]
         [Required]
-        [Display(Name = "DescripcionPerfil")]
-        public string DescripcionPerfil { get; set; }
+        public List<string> DescripcionPerfil { get; set; }
 
+        [Display(Name = "Hereda campos de auditoría")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

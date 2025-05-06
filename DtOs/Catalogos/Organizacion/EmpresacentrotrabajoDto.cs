@@ -1,28 +1,31 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Organizacion
 {
     public class EmpresaCentroTrabajoDto
     {
+        [Display(Name = "ID único de la relación empresa - centro de trabajo")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empresa relacionada")]
         [Required]
-        [Display(Name = "GrupoEmpresaId")]
-        public string GrupoEmpresaId { get; set; }
+        public List<string> GrupoEmpresaId { get; set; }
 
+        [Display(Name = "Centro de trabajo relacionado")]
         [Required]
-        [Display(Name = "CentroTrabajoId")]
-        public string CentroTrabajoId { get; set; }
+        public List<string> CentroTrabajoId { get; set; }
 
-        [Display(Name = "Vigente")]
-        public bool? Vigente { get; set; }
-
+        [Display(Name = "Indica si la relación está activa")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<bool?> Vigente { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

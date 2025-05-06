@@ -1,26 +1,35 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Nómina
+namespace PP_NominasBack.Dtos.Catalogos.Nomina
 {
-    public class CfdinominaDto
+    public class CfdiNominaDto
     {
-        /// Recibo relacionado
-        public string? ReciboNominaId { get; set; }
-
-        /// UUID del comprobante SAT
-        public string? Uuid { get; set; }
-
-        /// Sello digital del CFDI
-        public string SelloDigital { get; set; }
-
-        /// Fecha de timbrado SAT
+        [Display(Name = "ID del CFDI")]
         [Required]
-        public DateTime FechaTimbre { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Recibo relacionado")]
+        [Required]
+        public List<string> ReciboNominaId { get; set; }
+
+        [Display(Name = "UUID del comprobante SAT")]
+        [Required]
+        public List<string> Uuid { get; set; }
+
+        [Display(Name = "Sello digital del CFDI")]
+        [Required]
+        public List<string> SelloDigital { get; set; }
+
+        [Display(Name = "Fecha de timbrado SAT")]
+        [Required]
+        public List<DateTime?> FechaTimbre { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

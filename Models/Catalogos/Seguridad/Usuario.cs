@@ -1,26 +1,29 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Seguridad
 {
     public class Usuario
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string NombreUsuario { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string CorreoElectronico { get; set; }
+        [BsonElement("nombreUsuario")]
+        public List<string> NombreUsuario { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string PerfilId { get; set; }
+        [BsonElement("correoElectronico")]
+        public List<string> CorreoElectronico { get; set; }
 
-        public int? EstatusUsuario { get; set; }
+        [BsonElement("perfilId")]
+        public List<string> PerfilId { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("estatusUsuario")]
+        public List<int?> EstatusUsuario { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

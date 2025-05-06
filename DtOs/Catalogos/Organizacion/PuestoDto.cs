@@ -1,29 +1,15 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.Dtos.Catalogos.Organizacion
+namespace PP_NominasBack.Dtos.Catalogos.Organización
 {
     public class PuestoDto
     {
+        [Display(Name = "Enum funcional extendido para RH")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
-
-        [Required]
-        [Display(Name = "ClavePuesto")]
-        public string ClavePuesto { get; set; }
-
-        [Required]
-        [Display(Name = "NombrePuesto")]
-        public string NombrePuesto { get; set; }
-
-        [Required]
-        [Display(Name = "DescripcionPuesto")]
-        public string DescripcionPuesto { get; set; }
-
-        [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<int?> NivelPuesto { get; set; }
 
     }
 }

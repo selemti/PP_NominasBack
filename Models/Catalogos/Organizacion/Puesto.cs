@@ -1,23 +1,14 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
-namespace PP_NominasBack.Models.Catalogos.Organizacion
+namespace PP_NominasBack.Models.Catalogos.Organización
 {
     public class Puesto
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string ClavePuesto { get; set; }
-
-        public string NombrePuesto { get; set; }
-
-        public string DescripcionPuesto { get; set; }
-
-        public string Auditable { get; set; }
+        [BsonElement("nivelPuesto")]
+        public List<int?> NivelPuesto { get; set; }
 
     }
 }

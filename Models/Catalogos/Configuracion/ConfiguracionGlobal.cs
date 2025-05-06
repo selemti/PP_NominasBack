@@ -1,29 +1,35 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Configuracion
 {
     public class ConfiguracionGlobal
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string CategoriaConfiguracion { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string ClaveConfiguracion { get; set; }
+        [BsonElement("categoriaConfiguracion")]
+        public List<string> CategoriaConfiguracion { get; set; }
 
-        public string ValorConfiguracion { get; set; }
+        [BsonElement("claveConfiguracion")]
+        public List<string> ClaveConfiguracion { get; set; }
 
-        public string DescripcionConfiguracion { get; set; }
+        [BsonElement("valorConfiguracion")]
+        public List<string> ValorConfiguracion { get; set; }
 
-        public DateTime? FechaInicioVigencia { get; set; }
+        [BsonElement("descripcionConfiguracion")]
+        public List<string> DescripcionConfiguracion { get; set; }
 
-        public DateTime? FechaFinVigencia { get; set; }
+        [BsonElement("fechaInicioVigencia")]
+        public List<DateTime?> FechaInicioVigencia { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("fechaFinVigencia")]
+        public List<DateTime?> FechaFinVigencia { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

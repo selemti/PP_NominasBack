@@ -1,36 +1,39 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Empleados
 {
     public class HistorialPlazaEmpleadoDto
     {
+        [Display(Name = "ID único del cambio de plaza")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
+        [Display(Name = "Empleado involucrado")]
         [Required]
-        [Display(Name = "EmpleadoId")]
-        public string EmpleadoId { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
+        [Display(Name = "Plaza anterior del empleado")]
         [Required]
-        [Display(Name = "PlazaIdAnterior")]
-        public string PlazaIdAnterior { get; set; }
+        public List<string> PlazaIdAnterior { get; set; }
 
+        [Display(Name = "Nueva plaza asignada al empleado")]
         [Required]
-        [Display(Name = "PlazaIdNueva")]
-        public string PlazaIdNueva { get; set; }
+        public List<string> PlazaIdNueva { get; set; }
 
-        [Display(Name = "FechaCambio")]
-        public DateTime? FechaCambio { get; set; }
-
+        [Display(Name = "Fecha del cambio de plaza")]
         [Required]
-        [Display(Name = "MotivoCambio")]
-        public string MotivoCambio { get; set; }
+        public List<DateTime?> FechaCambio { get; set; }
 
+        [Display(Name = "Motivo del cambio de plaza")]
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
+        public List<string> MotivoCambio { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

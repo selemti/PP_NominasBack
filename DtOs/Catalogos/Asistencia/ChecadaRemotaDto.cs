@@ -5,36 +5,40 @@ namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class ChecadaRemotaDto
     {
-        [Required]
         [Display(Name = "Id")]
+        [Required]
         public string Id { get; set; }
 
-        [Required]
         [Display(Name = "EmpleadoId")]
+        [Required]
         public string EmpleadoId { get; set; }
 
         [Display(Name = "FechaHora")]
-        public DateTime? FechaHora { get; set; }
+        [Required]
+        public DateTime FechaHora { get; set; }
 
         [Display(Name = "TipoEvento")]
-        public int? TipoEvento { get; set; }
+        [Required]
+        public int TipoEvento { get; set; }
 
         [Display(Name = "Latitud")]
-        public decimal? Latitud { get; set; }
+        [Required]
+        public decimal Latitud { get; set; }
 
         [Display(Name = "Longitud")]
-        public decimal? Longitud { get; set; }
-
         [Required]
+        public decimal Longitud { get; set; }
+
         [Display(Name = "UbicacionId")]
+        [Required]
         public string UbicacionId { get; set; }
 
-        [Required]
         [Display(Name = "FotoAdjunta")]
+        [Required]
         public string FotoAdjunta { get; set; }
 
-        [Required]
         [Display(Name = "Auditable")]
+        [Required]
         public string Auditable { get; set; }
 
     }

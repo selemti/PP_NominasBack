@@ -1,33 +1,43 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Vacaciones
+namespace PP_NominasBack.Dtos.Catalogos.Vacaciones
 {
     public class VacacionesDto
     {
-        /// Empleado solicitante
-        public string? EmpleadoId { get; set; }
-
-        /// Fecha de inicio de vacaciones
+        [Display(Name = "ID de la solicitud de vacaciones")]
         [Required]
-        public DateTime FechaInicio { get; set; }
+        public List<string> Id { get; set; }
 
-        /// Fecha de regreso
+        [Display(Name = "Empleado solicitante")]
         [Required]
-        public DateTime FechaFin { get; set; }
+        public List<string> EmpleadoId { get; set; }
 
-        /// Número de días solicitados
-        public string DiasProgramados { get; set; }
+        [Display(Name = "Fecha de inicio de vacaciones")]
+        [Required]
+        public List<DateTime?> FechaInicio { get; set; }
 
-        /// Número real de días disfrutados
-        public string DiasGozados { get; set; }
+        [Display(Name = "Fecha de regreso")]
+        [Required]
+        public List<DateTime?> FechaFin { get; set; }
 
-        /// Periodo vacacional aplicable
-        public string? PeriodoVacacionalId { get; set; }
+        [Display(Name = "Número de días solicitados")]
+        [Required]
+        public List<int?> DiasProgramados { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Número real de días disfrutados")]
+        [Required]
+        public List<int?> DiasGozados { get; set; }
+
+        [Display(Name = "Periodo vacacional aplicable")]
+        [Required]
+        public List<string> PeriodoVacacionalId { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

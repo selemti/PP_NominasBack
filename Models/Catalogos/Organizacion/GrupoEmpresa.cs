@@ -1,23 +1,26 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Organizacion
 {
     public class GrupoEmpresa
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string Clave { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        public string Nombre { get; set; }
+        [BsonElement("clave")]
+        public List<string> Clave { get; set; }
 
-        public string Rfc { get; set; }
+        [BsonElement("nombre")]
+        public List<string> Nombre { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("rfc")]
+        public List<string> Rfc { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

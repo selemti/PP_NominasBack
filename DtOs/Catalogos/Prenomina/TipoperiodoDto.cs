@@ -1,19 +1,27 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using PP_NominasBack.DTOs.Catalogos.Shared;
+using PP_NominasBack.Models.Catalogos.Shared;
 
-namespace PP_NominasBack.DTOs.Catalogos.Prenómina
+namespace PP_NominasBack.Dtos.Catalogos.Prenomina
 {
-    public class TipoperiodoDto
+    public class TipoPeriodoDto
     {
-        /// Nombre descriptivo (Quincenal, Semanal)
-        public string NombreTipoPeriodo { get; set; }
+        [Display(Name = "ID del tipo de periodo")]
+        [Required]
+        public List<string> Id { get; set; }
 
-        /// Número de días en el periodo
-        public string DiasPeriodo { get; set; }
+        [Display(Name = "Nombre descriptivo (Quincenal, Semanal)")]
+        [Required]
+        public List<string> NombreTipoPeriodo { get; set; }
 
-        /// Hereda campos de auditoría
-        public string? Auditable { get; set; }
+        [Display(Name = "Número de días en el periodo")]
+        [Required]
+        public List<int?> DiasPeriodo { get; set; }
+
+        [Display(Name = "Hereda campos de auditoría")]
+        [Required]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

@@ -1,12 +1,23 @@
-using System;
-
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 namespace PP_NominasBack.Models.Catalogos.Shared
 {
     public class Auditable
     {
-        public string CreadoPor { get; set; }
-        public DateTime FechaCreacion { get; set; }
-        public string ModificadoPor { get; set; }
-        public DateTime? FechaModificacion { get; set; }
+        [BsonId]
+        public ObjectId Id { get; set; }
+
+        [BsonElement("fechaCreacion")]
+        public List<DateTime?> FechaCreacion { get; set; }
+
+        [BsonElement("fechaModificacion")]
+        public List<DateTime?> FechaModificacion { get; set; }
+
+        [BsonElement("usuarioCreadorId")]
+        public List<string> UsuarioCreadorId { get; set; }
+
+        [BsonElement("usuarioModificadorId")]
+        public List<string> UsuarioModificadorId { get; set; }
+
     }
 }

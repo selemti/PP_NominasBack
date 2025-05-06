@@ -1,30 +1,35 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
-using System;
-using System.Collections.Generic;
-
 namespace PP_NominasBack.Models.Catalogos.Shared
 {
     public class Telefono
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
+        public ObjectId Id { get; set; }
 
-        public string TipoEntidad { get; set; }
+        [BsonElement("id")]
+        public List<string> Id { get; set; }
 
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string EntidadId { get; set; }
+        [BsonElement("tipoEntidad")]
+        public List<string> TipoEntidad { get; set; }
 
-        public string ClavePais { get; set; }
+        [BsonElement("entidadId")]
+        public List<string> EntidadId { get; set; }
 
-        public string NumeroTelefonico { get; set; }
+        [BsonElement("clavePais")]
+        public List<string> ClavePais { get; set; }
 
-        public string Extension { get; set; }
+        [BsonElement("numeroTelefonico")]
+        public List<string> NumeroTelefonico { get; set; }
 
-        public int? TipoTelefono { get; set; }
+        [BsonElement("extension")]
+        public List<string> Extension { get; set; }
 
-        public string Auditable { get; set; }
+        [BsonElement("tipoTelefono")]
+        public List<int?> TipoTelefono { get; set; }
+
+        [BsonElement("auditable")]
+        public List<Auditable?> Auditable { get; set; }
 
     }
 }

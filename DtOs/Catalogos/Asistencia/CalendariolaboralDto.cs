@@ -1,38 +1,39 @@
+
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using PP_NominasBack.Models.Catalogos.Shared;
 
 namespace PP_NominasBack.Dtos.Catalogos.Asistencia
 {
     public class CalendarioLaboralDto
     {
+        [Display(Name = "ID del evento en calendario")]
         [Required]
-        [Display(Name = "Id")]
-        public string Id { get; set; }
+        public List<string> Id { get; set; }
 
-        [Display(Name = "Fecha")]
-        public DateTime? Fecha { get; set; }
-
-        [Display(Name = "TipoDia")]
-        public int? TipoDia { get; set; }
-
+        [Display(Name = "Fecha del evento")]
         [Required]
-        [Display(Name = "DescripcionEvento")]
-        public string DescripcionEvento { get; set; }
+        public List<DateTime?> Fecha { get; set; }
 
+        [Display(Name = "(0 = Laboral normal, 1 = Feriado oficial, 2 = Descanso especial)")]
         [Required]
-        [Display(Name = "EmpresaId")]
-        public string EmpresaId { get; set; }
+        public List<int?> TipoDia { get; set; }
 
+        [Display(Name = "Descripción breve del evento")]
         [Required]
-        [Display(Name = "DivisionId")]
-        public string DivisionId { get; set; }
+        public List<string> DescripcionEvento { get; set; }
+
+        [Display(Name = "Empresa relacionada (opcional)")]
+        [Required]
+        public List<string> EmpresaId { get; set; }
+
+        [Display(Name = "División relacionada (opcional)")]
+        [Required]
+        public List<string> DivisionId { get; set; }
 
         [Display(Name = "Vigente")]
-        public bool? Vigente { get; set; }
-
         [Required]
-        [Display(Name = "Auditable")]
-        public string Auditable { get; set; }
-
+        public List<bool?> Vigente { get; set; }
     }
 }
